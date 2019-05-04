@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form action="/APP/show" method="post">
+        Login:&nbsp; <input type="text" name="u">
+    <br/>
+        Password:&nbsp; <input type="password" name="p">
+        <input type="submit" value="Login">
+    </form>
+    {% if errors %}
+        <ul>
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+</body>
+</html>
