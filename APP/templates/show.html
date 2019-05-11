@@ -7,19 +7,20 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}"/>  
 </head>  
 <body>  
-<center><h1>Movie Records</h1></center>
+<center><h1>Movie Records</h1>
 <form id="searchform" action="/APP/search" method="get">
     <input type="text" name="q" type="text"/>
     <button type="button" onclick="searchform.submit()">Search</button>
 </form>
-
+</center>
 <center><table class="table table-striped table-bordered table-sm">  
     <thead class="thead-dark">  
     <tr>  
-        <th>Movie ID</th>  
+         
         <th>Movie Name</th>  
         <th>Actor</th>  
         <th>Actress</th>  
+        <th>Director</th> 
         {% if role == 'A' %}
         <th>Actions</th>  
         {% endif %}
@@ -28,10 +29,11 @@
     <tbody>  
 {% for movie in movies %}  
     <tr>  
-        <td>{{ movie.mid }}</td>  
+        
         <td>{{ movie.mname }}</td>  
         <td>{{ movie.mactor }}</td>  
         <td>{{ movie.mactress }}</td>  
+        <td>{{ movie.mdirector }}</td>  
         {% if role == 'A' %}
         <td>  
             <a href="/APP/edit/{{ movie.mid }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
@@ -48,7 +50,7 @@
 <center><a href="/APP/mvi" class="btn btn-primary">Add New Record</a></center>  
 {% endif %}
 <center>
-<a href="/APP/login" class="btn btn-primary">Logout</a>
+<a href="/APP/logout" class="btn btn-primary">Logout</a>
 </center>
 </body>  
 </html>  

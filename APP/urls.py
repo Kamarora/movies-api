@@ -18,4 +18,5 @@ urlpatterns = [
     path('delete/<int:id>', views.destroy), 
     path('search', views.search),
     path('login', views.login),
+    path('logout', views.logout),
 ]
